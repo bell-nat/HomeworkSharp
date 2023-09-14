@@ -10,6 +10,8 @@ public static class ConsoleWrapper
 {
     public static float GetFloat(string message) => GetDigital<float>(message, FloatParse);
 
+    public static double GetDouble(string message) => GetDigital<double>(message, DoubleParse);
+
     public static int GetInt(string message) => GetDigital<int>(message, IntParse);
 
     private static T GetDigital<T>(string message, Delegate method)
@@ -33,6 +35,12 @@ public static class ConsoleWrapper
     private static ValueBox<float> FloatParse(string? line) => new()
     {
         IsParse = float.TryParse(line, out float result),
+        Value = result
+    };
+
+    private static ValueBox<double> DoubleParse(string? line) => new()
+    {
+        IsParse = double.TryParse(line, out double result),
         Value = result
     };
 }
