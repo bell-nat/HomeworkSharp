@@ -14,8 +14,8 @@ namespace HomeworkSharp.Task1.SubTask1;
 /// </summary>
 public class Handler
 {
-    private ModeEnum _mode;
-    private double[] _valuesDefault;
+    private readonly ModeEnum _mode;
+    private readonly double[] _valuesDefault;
 
     public Handler(ModeEnum mode)
     {
